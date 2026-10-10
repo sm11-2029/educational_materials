@@ -1,0 +1,397 @@
+\documentclass{article}
+
+\usepackage{fontsize}
+\changefontsize{14}
+
+\usepackage[a4paper, top=1.5cm, bottom=1.5cm, left=2.5cm, right=1.5cm]{geometry}
+
+\usepackage[T2A]{fontenc}   % кодировка шрифтов для кириллицы
+\usepackage[utf8]{inputenc} % кодировка исходного файла (UTF-8)
+\usepackage[english, russian]{babel} % правила переносов и типографики
+
+\usepackage{romannum} % римские цифры
+
+\usepackage{amsmath} % вставки текста в формулы, нумерация формул
+
+\usepackage{siunitx} %значок градуса
+
+\usepackage{makecell} %переносы в таблице
+
+
+
+\begin{document}
+
+\pagenumbering{arabic}
+
+
+%ТИТУЛЬНИК
+
+
+\thispagestyle{empty}
+
+\begingroup
+\setlength{\parindent}{0pt}
+
+\begin{bfseries}
+
+\vspace*{0cm}
+Министерство образования и науки РФ
+
+\vspace{2cm}
+Московский государственный технический университет имени\\Н.Э. Баумана
+
+\vspace{2cm}
+Факультет «Фундаментальные науки»
+
+\vspace{2cm}
+Кафедра «Теоретическая механика» имени профессора\\ Н.Е. Жуковского
+
+\vspace{2cm}
+
+Домашнее задание № 2\\
+Кинематика плоского движения твердого тела
+
+\end{bfseries}
+
+\vspace{2cm}
+
+\textbf{Вариант} \hspace{0.5cm} 20
+
+\vspace{0.5cm}
+
+\textbf{Группа} \hspace{0.5cm} СМ11-21Б
+
+\vspace{0.5cm}
+
+\textbf{Студент} \hspace{0.5cm} Усачев Е.М. \hspace{1.5cm} \underline{\hspace{3cm}} 
+\hspace{1cm}\underline{\hspace{3cm}}\\
+\small\hspace*{8.5cm} подпись \hspace{2.7 cm} дата \normalsize
+
+\vspace{0cm}
+\textbf{Преподаватель} \hspace{0.5cm} Белый В.С.
+
+
+\vfill
+\textbf{Москва 2026 год}
+\vspace{1cm}
+
+\endgroup
+
+%ТИТУЛЬНИК
+
+
+\newpage
+
+\begin{center}\large \textbf{Кинематика плоского движения твердого тела} \end{center}
+
+\noindent Дано:\\ 
+$S_{A_1} = 0,2t^2$ м; $\varphi = t^2$ рад; $r = 0,1$ м; $R = 0,3$ м; $t^* = 1$ с.
+
+\medskip
+
+\noindent Необходимо:
+
+-- для момента времени $t^* = 1$ с определить скорости и ускорения точек $A$, $B$, $C$, угловые скорости и ускорения всех звеньев механизма;
+
+-- найти положение мгновенного центра скоростей (МЦС) звеньев и мгновенного центра ускорений (МЦУ) звена 2, с их помощью проверить правильность нахождения скорости и ускорения точки $B$;
+
+-- нанести на рисунок механизма векторы скоростей и ускорений точек $A$, $B$, $C$, обозначить круговыми стрелками направления угловых скоростей и ускорений звеньев;
+
+\bigskip 
+\bigskip 
+\bigskip 
+\bigskip 
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip 
+\bigskip 
+\bigskip 
+\bigskip 
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\begin{center}\text{Рис. 1. Схема механизма} \end{center}
+
+
+\newpage
+
+\textit{\textsf{Кинематические характеристики движения точек  
+и звеньев механизма}}
+
+\bigskip
+
+Сначала определим виды движения звеньев данного механизма: звено 1 (рейка) совершает поступательное движение, звено 2 (шестерня) — плоское движение, звено 3 (рейка) — поступательное, звено 4 (шестерня) — вращательное вокруг оси $O(z)$.
+
+\medskip
+
+Звено 4 (вращательное движение). По заданному закону вращения $\varphi = t^2$ рад определим для момента времени $t^* = 1$ с:
+
+\begin{equation}
+\omega_4 = |\dot{\varphi}| = |2t| = 2 \text{ рад/с;}
+\end{equation}
+
+\begin{equation}
+\varepsilon_4 = |\ddot{\varphi}| = |2| = 2 \text{ рад/с}^2.
+\end{equation}
+\medskip
+Скорость и касательное ускорение точки $E$ (точка контакта звеньев 4 и 3):
+\begin{equation}
+v_E = \omega_4 r = 2 \cdot 0,1 = 0,2 \text{ м/с;}
+\end{equation}
+\begin{equation}
+a_E^\tau = \varepsilon_4 r = 2 \cdot 0,1 = 0,2 \text{ м/с}^2.
+\end{equation}
+\medskip
+Звено 3 (поступательное движение). Ввиду отсутствия проскальзывания:
+\begin{equation}
+v_3 = v_E = 0,2 \text{ м/с;} \quad a_3 = a_E^\tau = 0,2 \text{ м/с}^2.
+\end{equation}
+\medskip
+Точка $B$ принадлежит звену 3, поэтому:
+\begin{equation}
+v_B = v_3 = 0,2 \text{ м/с;} \quad a_B^\tau = a_3 = 0,2 \text{ м/с}^2.
+\end{equation}
+\medskip
+Звено 1 (поступательное движение). По закону $S_{A_1} = 0,2t^2$ м:
+\begin{equation}
+v_1 = |\dot{S}_{A_1}| = |0,4t| = 0,4 \text{ м/с;}
+\end{equation}
+\begin{equation}
+a_1 = |\ddot{S}_{A_1}| = |0,4| = 0,4 \text{ м/с}^2.
+\end{equation}
+\medskip
+Точка $A$ принадлежит звену 1, поэтому:
+\begin{equation}
+v_A = v_1 = 0,4 \text{ м/с;} \quad a_A^\tau = a_1 = 0,4 \text{ м/с}^2.
+\end{equation}
+
+\medskip
+
+Звено 2 (плоское движение). Рассмотрим движение шестерни 2. Скорости точек $A$ и $B$ известны. Определим угловую скорость звена 2. Точка $C$ — полюс шестерни. 
+\begin{equation}
+    \vec{v_A} = \vec{v_C} + \vec{v_{AC}} = \vec{v_C} + \vec{\omega_2} \times \vec{R_1} ;
+\end{equation}
+\begin{equation}
+    \vec{v_B} = \vec{v_C} + \vec{v_{BC}} = \vec{v_C} + \vec{\omega_2} \times \vec{R_2}.
+\end{equation}
+\medskip
+Отсюда:
+\begin{equation}
+    \vec{v_A} - \vec{v_{AC}} = \vec{v_B} - \vec{v_{BC}};
+\end{equation}
+\begin{equation}
+    \vec{v_A} + \vec{v_{BC}} = \vec{v_B} + \vec{v_{AC}}.
+\end{equation}
+\medskip
+Так как вектора $\vec{R_1}$ и $\vec{R_2}$ равны по модулю (см. рис. 2), то равны модули скоростей точек $A$ и $B$ относительно точки $C$:
+\begin{equation}
+    {v}_{AC}={v}_{BC} = \omega R.
+\end{equation}
+Спроецируем уравнение $(13)$ на ось $Ox$:
+\begin{equation}
+    {v_A} - {v_{BC}} = {v_B} + {v_{AC}}.
+\end{equation}
+\medskip
+Тогда с учетом уравнения $(14)$ получаем:
+\begin{equation}
+v_{AC} = v_{BC} = \frac{v_A - v_B}{2} = \frac{0,4 - 0,2}{2} = 0,1 \text{ м/с}.
+\end{equation}
+Тогда из уравнения $(14)$:
+\begin{equation}
+\omega_2 = \frac{v_{BC}}{R} = \frac{0,1}{0,3} = 0,333 \text{ рад/с}.
+\end{equation}
+Спроецируем выражение $(10)$ на ось $Ox$:
+\begin{equation}
+    v_A = v_C + v_{AC};
+\end{equation}
+\begin{equation}
+v_C = v_A - v_{AC} = 0,4 - 0,1 = 0,3 \text{ м/с}.
+\end{equation}
+\medskip
+Определим ускорения точек звена 2. Так как точка $C$ - полюс, то:
+\begin{equation}
+    \vec{a}_A = \vec{a}_C + \vec{a}_{AC} = \vec{a}_C + \vec{a}_{AC}^\tau + \vec{a}_{AC}^n;
+\end{equation}
+\begin{equation}
+    \vec{a}_B = \vec{a}_C + \vec{a}_{BC} = \vec{a}_C + \vec{a}_{BC}^\tau + \vec{a}_{BC}^n;
+\end{equation}
+\medskip
+Известно, что:
+\begin{equation}
+    \vec{a}_A = \vec{a}_A^\tau + \vec{a}_A^n;
+\end{equation}
+\begin{equation}
+    \vec{a}_B = \vec{a}_B^\tau + \vec{a}_B^n.
+\end{equation}
+\medskip
+Известно, что $\vec{a}_C^n = 0$, так как звено 2 находится между двумя рейками. Из уравнений $(19)$ и $(21)$ получаем:
+\begin{equation}
+    \vec{a}_A^\tau + \vec{a}_A^n = \vec{a}_C + \vec{a}_{AC}^\tau + \vec{a}_{AC}^n;
+\end{equation}
+\medskip
+Спроецируем уравнение $(23)$ на ось $Oy$:
+\begin{equation}
+    {a}_A^n = {a}_{AC}^n = \omega_2^2R = 0,33^2 \cdot 0,3 = 0,033 {\text{ м/с}}^2.
+\end{equation}
+\medskip
+Из уравнений $(20)$ и $(22)$ получаем:
+\begin{equation}
+    \vec{a}_B^\tau + \vec{a}_B^n = \vec{a}_C + \vec{a}_{BC}^\tau + \vec{a}_{BC}^n.
+\end{equation}
+\medskip
+Спроецируем уравнение $(25)$ на ось $Oy$:
+\begin{equation}
+    -{a}_B^n = -{a}_{BC}^n;
+\end{equation}
+\begin{equation}
+    {a}_B^n = {a}_{BC}^n = \omega_2^2R =0,33^2 \cdot 0,3 =0,033 {\text{ м/с}}^2.
+\end{equation}
+\medskip
+Полные ускорения точек $A$ и $B$:
+\begin{equation}
+a_A = \sqrt{(a_A^\tau)^2 + (a_A^n)^2} = \sqrt{0,4^2 + 0,033^2} = 0,401 \text{ м/с}^2;
+\end{equation}
+\begin{equation}
+a_B = \sqrt{(a_B^\tau)^2 + (a_B^n)^2} = \sqrt{0,2^2 + 0,033^2} = 0,203 \text{ м/с}^2.
+\end{equation}
+\medskip
+Из уравнений $(23)$ и $(24)$ получаем:
+\begin{equation}
+    \vec{a}_A^\tau = \vec{a}_C^\tau +\vec{a}_{AC}^\tau.
+\end{equation}
+\medskip
+Спроецируем уравнение $(30)$ на ось $Ox$:
+\begin{equation}
+    {a}_A^\tau = {a}_C^\tau +{a}_{AC}^\tau.
+\end{equation}
+\medskip
+Из уравнений $(25)$ и $(27)$ получаем:
+\begin{equation}
+    \vec{a}_B^\tau = \vec{a}_C^\tau +\vec{a}_{BC}^\tau.
+\end{equation}
+\medskip
+Спроецируем уравнение $(30)$ на ось $Ox$:
+\begin{equation}
+    {a}_B^\tau = {a}_C^\tau - {a}_{BC}^\tau.
+\end{equation}
+Так как ${a}_{AC}^\tau = {a}_{BC}^\tau =\varepsilon_2R$, то из уравнений $(31)$ и $(33)$ получаем:
+\begin{equation}
+a_{AC}^\tau = a_{BC}^\tau = \frac{a_A^\tau - a_B^\tau}{2} = \frac{0,4 - 0,2}{2} = 0,1 \text{ м/с}^2.
+\end{equation}
+\medskip
+Угловое ускорение звена 2:
+\begin{equation}
+\varepsilon_2 = \frac{a_{BC}^\tau}{R} = \frac{0,1}{0,3} = 0,333 \text{ рад/с}^2.
+\end{equation}
+\medskip
+Касательное ускорение точки $C$ из уравнения $(31)$:
+\begin{equation}
+a_C^\tau = a_A^\tau - a_{AC}^\tau = 0,4 - 0,1 = 0,3 \text{ м/с}^2.
+\end{equation}
+\medskip
+МЦС звена 2 находится из пропорции:
+\begin{equation}
+    \frac{AP_2}{BP_2} = \frac{v_A}{v_B};
+\end{equation}
+\begin{equation}
+    \frac{AB+BP_2}{BP_2} = \frac{v_A}{v_B};
+\end{equation}
+\begin{equation}
+    \frac{AB}{BP_2} = \frac{v_A}{v_B} - 1 = \frac{v_A-v_B}{v_B};
+\end{equation}
+\begin{equation}
+    BP_2 = \frac{AB \cdot v_B}{v_A-v_B} = \frac{2R \cdot v_B}{v_A-v_B} = \frac{2 \cdot 0,3 \cdot 0,2}{0,4-0,2} = 0,6 \text{ м}.
+\end{equation}
+\medskip
+Проверка скорости точки $B$:
+\begin{equation}
+v_B = \omega_2 \cdot BP_2 = 0,333\cdot 0,6 = 0,2 \text{ м/с} \quad \text{(верно)}.
+\end{equation}
+\medskip
+МЦУ звена 2 (точка $Q$):
+\begin{equation}
+AQ = \frac{a_A}{\sqrt{\varepsilon_2^2 + \omega_2^4}} = \frac{\sqrt{0,4^2 + 0,033^2}}{\sqrt{0,333^2 + 0,333^4}} = 1,142 \text{ м};
+\end{equation}
+\begin{equation}
+\tan \alpha = \frac{\varepsilon_2}{\omega_2^2} = \frac{0,333}{0,333^2}=3,003;
+\end{equation}
+\begin{equation}
+    \alpha = \arctan 3,003 = 72^\circ.
+\end{equation}
+Расстояние $BQ$ и проверка ускорения точки $B$:
+\begin{equation}
+BQ = \sqrt{AQ^2 + AB^2 - 2 \cdot AQ \cdot AB \cdot \cos(\angle QAB)} = 0,577 \text{ м};
+\end{equation}
+\begin{equation}
+a_B = BQ \sqrt{\varepsilon_2^2 + \omega_2^4} = 0,577 \sqrt{0,333^2 + 0,333^4} = 0,203 \text{ м/с}^2 \quad \text{(верно)}.
+\end{equation}
+
+\medskip
+Вывод: в результате расчетов были получены значения кинематических характеристик рассматриваемого механизма в момент времени $t^*=1$ с, которые представлены в таблице 1. Для звена 4 МЦС - точка $O$, для МЦС звена 2 - точка $P$, для звеньев 1,3 МЦС не определены, поскольку эти звенья движутся поступательно. Для звена 3 МЦУ - точка $Q$.
+
+\begin{flushright}
+  \small\textit{Таблица 1} \hspace*{0.4cm}
+\end{flushright}
+
+\vspace*{-0.9cm}
+
+\begin{center}
+  Значения кинематических характеристик в момент $t^*=1$с
+\end{center}
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  \rule{0pt}{1cm} № & \hspace*{0.5cm} Название величины \hspace*{0.5cm} & \makecell{Обозначение\\ величины} & Значение & \makecell{Единицы\\ измерения} \\[0.5cm]
+  \hline
+  \rule{0pt}{1cm} 1  & \makecell{Угловая скорость\\звена 2} & $\omega_2$ & 0,333 & рад/с \\[0.5cm]
+  
+  \hline
+\end{tabular}
+\newpage
+\begin{flushright}
+  \small\textit{Окончание табл. 1} \hspace*{0.4cm}
+\end{flushright}
+
+\begin{tabular}{|c|c|c|c|c|}
+     \hline
+     \rule{0pt}{1cm} № & \hspace*{0.5cm} Название величины \hspace*{0.5cm} & \makecell{Обозначение\\ величины} & Значение & \makecell{Единицы\\ измерения} \\[0.5cm]
+     \hline
+     \rule{0pt}{1cm} 2  & \makecell{Угловая скорость\\звена 4} & $\omega_4$ & 2 & рад/с \\[0.5cm]
+     \hline
+      \rule{0pt}{1cm} 3  & \makecell{Угловое ускорение\\звена 2} & $\varepsilon_2$ & 0,333 & рад/с$^2$ \\[0.5cm]
+     \hline
+     \rule{0pt}{1cm} 4  & \makecell{Угловое ускорение\\звена 4} & $\varepsilon_4$ & 2 & рад/с$^2$ \\[0.5cm]
+      \hline
+      \rule{0pt}{1cm} 5  & \makecell{Скорость\\точки $A$} & $v_A$ & 0,4 & м/с \\[0.5cm]
+      \hline
+      \rule{0pt}{1cm} 6  & \makecell{Скорость\\точки $B$} & $v_B$ & 0,2 & м/с \\[0.5cm]
+      \hline
+      \rule{0pt}{1cm} 7  & \makecell{Скорость\\точки $C$} & $v_C$ & 0,3 & м/с \\[0.5cm]
+      \hline
+      \rule{0pt}{1cm} 8  & \makecell{Ускорение\\точки $A$} & $a_A$ & 0,401 & м/с$^2$ \\[0.5cm]
+      \hline
+      \rule{0pt}{1cm} 9 & \makecell{Ускорение\\точки $B$} & $a_B$ & 0,203 & м/с$^2$ \\[0.5cm]
+      \hline
+      \rule{0pt}{1cm} 10 & \makecell{Ускорение\\точки $C$} & $a_C^\tau$ & 0,3 & м/с$^2$ \\[0.5cm]
+      \hline
+\end{tabular}
+\end{document}

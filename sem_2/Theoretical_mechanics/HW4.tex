@@ -1,0 +1,350 @@
+\documentclass{article}
+
+\usepackage{fontsize}
+\changefontsize{14}
+
+\usepackage[a4paper, top=1.5cm, bottom=1.5cm, left=2.5cm, right=1.5cm]{geometry}
+
+\usepackage[T2A]{fontenc}   % кодировка шрифтов для кириллицы
+\usepackage[utf8]{inputenc} % кодировка исходного файла (UTF-8)
+\usepackage[english, russian]{babel} % правила переносов и типографики
+
+\usepackage{romannum} % римские цифры
+
+\usepackage{amsmath} % вставки текста в формулы, нумерация формул
+
+
+\usepackage{siunitx} %значок градуса
+
+\usepackage{makecell} %переносы в таблице
+\usepackage{graphicx} %вставка изображений
+
+
+
+\begin{document}
+
+\pagenumbering{arabic}
+
+
+%ТИТУЛЬНИК
+
+
+\thispagestyle{empty}
+
+\begingroup
+\setlength{\parindent}{0pt}
+
+\begin{bfseries}
+
+\vspace*{0cm}
+Министерство образования и науки РФ
+
+\vspace{2cm}
+Московский государственный технический университет имени\\Н.Э. Баумана
+
+\vspace{2cm}
+Факультет «Фундаментальные науки»
+
+\vspace{2cm}
+Кафедра «Теоретическая механика» имени профессора\\ Н.Е. Жуковского
+
+\vspace{2cm}
+
+Домашнее задание № 4\\
+Статика
+
+\end{bfseries}
+
+\vspace{2cm}
+
+\textbf{Вариант} \hspace{0.5cm} 20
+
+\vspace{0.5cm}
+
+\textbf{Группа} \hspace{0.5cm} СМ11-21Б
+
+\vspace{0.5cm}
+
+\textbf{Студент} \hspace{0.5cm} Усачев Е.М. \hspace{1.5cm} \underline{\hspace{3cm}} 
+\hspace{1cm}\underline{\hspace{3cm}}\\
+\small\hspace*{8.5cm} подпись \hspace{2.7 cm} дата \normalsize
+
+\vspace{0cm}
+\textbf{Преподаватель} \hspace{0.5cm} Белый В.С.
+
+
+\vfill
+
+\vspace{1cm}
+\begin{center}
+\textbf{Москва 2026 год}
+\end{center}
+
+\endgroup
+
+%ТИТУЛЬНИК
+
+
+\newpage
+
+\begin{center}\large \textbf{Плоская статика 1} \end{center}
+
+\noindent Дано:\\
+$AB=BC=CD=l$; $\alpha = 45^\circ$; $\beta = 60^\circ$; $\lambda = 30^\circ$; $C_{упр} = Pl$; $M = Pl$;  $q_m = \frac{2P}{l}$.
+
+\medskip
+
+\noindent Определить реакции опор $A$ и $B$.
+
+\bigskip 
+\bigskip 
+
+\begin{center}\includegraphics[width=0.8\textwidth]{scheme1.png}\\
+\text{Рис. 1. Схема системы 1} \end{center}
+
+
+\newpage
+
+
+
+Данная система является статически неопределимой, поэтому разобьем ее на 3 системы (стержни $AB$, $BC$, $CD$), добавив силы, действующие в их соединениях (в шарнирах $B$ и $C$).
+
+Рассмотрим стержень $AB$. Запишем для него уравнения равновесия:
+\begin{equation}
+\sum F_x = X_B + X_A - Psin60^\circ = 0;
+\end{equation}
+\begin{equation}
+\sum F_y = Y_A - Y_B - Pcos60^\circ = 0;
+\end{equation}
+\begin{equation}
+\sum M(B) = X_Al - Psin60^\circ\frac{l}{2} = 0.
+\end{equation}
+
+Из уравнения $(3)$ найдем горизонтальную проекцию реакции опоры $A$ $X_A$:
+\begin{equation}
+X_A = 0,5Psin60^\circ = 0,43P.
+\end{equation}
+
+Подставив уравнение $(4)$ в уравнение $(1)$ получим:
+\begin{equation}
+X_B = Psin60^\circ - 0,5Psin60^\circ = 0,5Psin60^\circ = 0,43P.
+\end{equation}
+
+Рассмотрим стержень $BC$. Запишем для него уравнения равновесия:
+\begin{equation}
+\sum F_x = X_C - X_B = 0;
+\end{equation}
+\begin{equation}
+\sum F_y = Y_B + Y_L+Y_C - Q = 0;
+\end{equation}
+\begin{equation}
+\sum M(C) = M_{ynp} - \frac{1}{3}Ql + 0,5Y_Ll + Y_Bl = 0.
+\end{equation}
+
+Из уравнения $(6)$:
+\begin{equation}
+X_C = X_B = 0,5Psin60^\circ.
+\end{equation}
+
+Пружина в шарнире $C$ заведена на угол $\lambda$ по часовой стрелке, поэтому она создает вращательный момент $M_{ynp}$, который стремится повернуть стержень $BC$ против часовой стрелки:
+\begin{equation}
+M_{ynp} = C_{ynp}\frac{\pi}{6} = \frac{\pi}{6}Pl.
+\end{equation}
+
+$Q$ - это распределенная сила, действующая на стержень $BC$ в точке на расстоянии $\frac{2}{3}l$ от точки $B$, которая равна:
+\begin{equation}
+Q = 0,5q_ml = 0,5l\frac{2P}{l} = P.
+\end{equation}
+
+Для стержня $CD$ запишем только уравнение моментов относительно точки $D$:
+\begin{equation}
+\sum M(D) = M - M_{ynp} + X_Clcos30^\circ - Y_Clsin30^\circ = 0.
+\end{equation}
+
+Из этого уравнения выразим $Y_C$ и подставим вместе с уравнением $(9)$ уравнение $(7)$:
+\begin{equation}
+Y_C = \frac{Pl - \frac{\pi}{6}Pl + X_Clcos30^\circ}{lsin30^\circ} = \frac{\frac{5\pi}{6}P + 0,5Psin60^\circ cos30^\circ}{sin 30^\circ} = 5,99P;
+\end{equation}
+\begin{equation}
+Y_B + Y_L +5,99P -P = 0.
+\end{equation}
+
+Из уравнения $(8)$ выразим силу реакции шарнирного стержня в точке $L$ $Y_L$ и подставим его в уравнение $(14)$:
+\begin{equation}
+Y_L = \frac{\frac{1}{3}Pl - \frac{\pi}{6}Pl - Y_Bl}{0,5l} = -0,38P -2Y_B;
+\end{equation}
+\begin{equation}
+Y_B - 0,38P - 2Y_B +5,99P -P = 0;
+\end{equation}
+\begin{equation}
+Y_B = 4,61P.
+\end{equation}
+
+Подставим уравнение $(17)$ в уравнение $(2)$:
+\begin{equation}
+Y_A - 4,61P - Pcos60^\circ = 0;
+\end{equation}
+\begin{equation}
+Y_A = 4,61P + 0,5P = 5,11P.
+\end{equation}
+
+Тогда силы реакции опор $A$ и $B$ равны:
+\begin{equation}
+R_A = \sqrt{X^2_A + Y^2_A} = \sqrt{(0,43P)^2 + (5,11P)^2} = 5,13P;
+\end{equation}
+\begin{equation}
+R_B = \sqrt{X^2_B + Y^2_B} = \sqrt{(0,43P)^2 + (4,61P)^2} = 4,63P.
+\end{equation}
+
+Так как сила $Y_L$ получилась отрицательной в ходе расчетов, то она будет направлена в противоположную сторону. Остальные силы направлены верно.
+
+\medskip
+Вывод: в результате расчетов были получены значения сил реакции опор $A$ и $B$, которые представлены в таблице 1.
+
+\medskip
+
+
+\begin{flushright}
+  \textit{Таблица 1} \hspace*{0.4cm}
+\end{flushright}
+
+\vspace*{-0.9cm}
+
+\begin{center}
+  Значения сил реакции опор
+\end{center}
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  \rule{0pt}{1cm} № & \hspace*{0.5cm} Название величины \hspace*{0.5cm} & \makecell{Обозначение\\ величины} & Значение & \makecell{Единицы\\ измерения} \\[0.5cm]
+  \hline
+  \rule{0pt}{1cm} 1  & \makecell{Сила реакции опоры $A$} & $R_A$ & $5,13P$ & Н \\[0.5cm]
+  
+  \hline
+  \rule{0pt}{1cm} 2  & \makecell{Сила реакции опоры $B$} & $R_B$ & $4,63P$ & Н \\[0.5cm]
+  \hline
+\end{tabular}
+
+\newpage
+
+
+\begin{center}\large \textbf{Пространственная статика 1} \end{center}
+
+\noindent Дано:\\
+$P$; $l$; $R = 2r = l$; $l_1 = 2l$; $AB = 2l$; $\varphi= \beta = 60^\circ$; $\alpha = 30^\circ$; $M = 0,5Pl$.
+
+\medskip
+
+\noindent Определить реакции подпятника $A$ и подшипника $B$, а также необходимую для равновесия силу $Q$.
+
+\bigskip 
+\bigskip 
+
+\begin{center}\includegraphics[width=0.8\textwidth]{scheme3.png}\\
+\text{Рис. 3. Схема системы 2} \end{center}
+
+
+\newpage
+
+Данная система является статически определимой. Запишем для нее условия равновесия:
+\begin{equation}
+\sum F_x = X_A -Pcos60^\circ + Qcos30^\circ sin60^\circ + X_B = 0;
+\end{equation}
+\begin{equation}
+\sum F_y = Y_A - Psin60^\circ - Qsin30^\circ + Y_B = 0;
+\end{equation}
+\begin{equation}
+\sum F_z = Z_A - Qcos30^\circ cos60^\circ = 0;
+\end{equation}
+\begin{equation}
+\sum M_z = PR - M - Qsin30^\circ l = 0;
+\end{equation}
+\begin{equation}
+\sum M_x = Y_Al - Psin60^\circ \cdot 0,5 \cdot 2l + 4Qsin30^\circ l - 5Y_Bl= 0;
+\end{equation}
+\begin{equation}
+\sum M_y = -X_Al - Pcos60^\circ l + Qcos30^\circ cos 60^\circ l +5X_Bl = 0;
+\end{equation}
+
+Из уравнения $(25)$ получим:
+\begin{equation}
+Q = \frac{PR-M}{lsin30^\circ} = \frac{Pl}{2\cdot0,5l} = P.
+\end{equation}
+
+Подставим значение $Q$ в уравнение $(24)$:
+\begin{equation}
+Z_A = Pcos30^\circ cos60^\circ = 0,43P.
+\end{equation}
+
+Из уравнения $(22)$ выразим $X_A$ и подставим в уравнение $(27)$:
+\begin{equation}
+X_A = Pcos60^\circ - Qcos30^\circ sin60^\circ - X_B = -0,25P - X_B;
+\end{equation}
+\begin{equation}
+-0,25Pl - X_Bl -0,5Pl +0,43Pl +5X_Bl = 0;
+\end{equation}
+\begin{equation}
+X_B = 0,08P.
+\end{equation}
+
+Тогда
+\begin{equation}
+X_A = -0,33P.
+\end{equation}
+
+Из уравнения $(23)$ выразим $Y_A$ и подставим в уравнение $(26)$:
+\begin{equation}
+Y_A = Psin60^\circ + Qsin30^\circ - Y_B = 1,37P - Y_B;
+\end{equation}
+\begin{equation}
+1,37Pl - Y_Bl - 0,87P +4\cdot0,5Pl -5Y_Bl = 0;
+\end{equation}
+\begin{equation}
+Y_B = 0,42P.
+\end{equation}
+
+Тогда
+\begin{equation}
+Y_A = 0,95P.
+\end{equation}
+
+Тогда реакции подпятника $A$ и подшипника $B$ равны:
+\begin{equation}
+R_A = \sqrt{X^2_A + Y^2_A + Z^2_A} = \sqrt{(-0,33P)^2 + (0,95P)^2 + (0,43P)^2} = 1,09P;
+\end{equation}
+\begin{equation}
+R_{B} = \sqrt{X^2_B + Y^2_B} = \sqrt{(0,08P)^2 + (0,42P)^2} = 0,43P.
+\end{equation}
+
+Так как значение составляющей реакции подпятника $A$ вдоль оси $Ox$ $X_A$ получилась в ходе расчетов отрицательной, то она должна быть направлена в противоположную сторону.
+
+Вывод: в результате расчетов были получены значения сил реакции подпятника $A$ и подшипника $B$ и необходимой для равновесия силы $Q$, которые представлены в таблице 2.
+
+\newpage
+
+\begin{flushright}
+  \textit{Таблица 2} \hspace*{0.4cm}
+\end{flushright}
+
+\vspace*{-0.9cm}
+
+\begin{center}
+  Значения сил реакции подпятника и подшипника и необходимой для равновесия силы
+\end{center}
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  \rule{0pt}{1cm} № & \hspace*{0.5cm} Название величины \hspace*{0.5cm} & \makecell{Обозначение\\ величины} & Значение & \makecell{Единицы\\ измерения} \\[0.5cm]
+  \hline
+  \rule{0pt}{1cm} 1  & \makecell{Сила реакции \\ подпятника $A$} & $R_A$ & $1,09P$ & Н \\[0.5cm]
+  \hline
+  \rule{0pt}{1cm} 2  & \makecell{Сила реакции \\ подшипника $B$} & $R_B$ & $0,43P$ & Н \\[0.5cm]
+  \hline
+  \rule{0pt}{1cm} 2  & \makecell{Сила, необходимая\\для равновесия} & $Q$ & $P$ & Н \\[0.5cm]
+  \hline
+\end{tabular}
+
+
+
+\end{document}
+
